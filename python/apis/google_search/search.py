@@ -28,5 +28,4 @@ def search_description(query):
             return None
     except:
         return None
-print(search_description("pizza"))
-search(query="pizza")
+
