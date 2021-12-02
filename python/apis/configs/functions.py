@@ -63,7 +63,6 @@ def age(bday,bmoth,byear):
     elif days > 0:
         PSpeak(f"I am {days} days old")
 
-
 def ctime():
     current_time = datetime.today().strftime("%I:%M %p")
     PSpeak(f"Now it is {current_time}") 

@@ -11,7 +11,6 @@ def current_weather():
     return(f"{W.detailed_status}")
 
 
-# print(w.wind())
 def current_humidity():
     return(f"current humidity {W.humidity}%")
 
@@ -26,8 +25,4 @@ def chance_of_rain():
 
 def cloud_cover():
     return f"cloud cover {W.clouds}%"
-# print(w.heat_index)
-# print(w.clouds)
 
-#forecast = mgr.forecast_at_place('', 'daily')
-# (forecast)
