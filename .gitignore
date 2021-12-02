@@ -3,5 +3,11 @@
 /tests
 /.vscode
 __pycache__
+<<<<<<< HEAD
 *.json
 /tests/test.py
+=======
+python/tests/test.json
+python/apis/google_search/data.json
+data.json
+>>>>>>> master
