@@ -1,0 +1,5 @@
+/env
+/js/node_modules
+/tests
+/.vscode
+__pycache__
