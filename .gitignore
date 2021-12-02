@@ -3,3 +3,6 @@
 /tests
 /.vscode
 __pycache__
+python/tests/test.json
+python/apis/google_search/data.json
+data.json
