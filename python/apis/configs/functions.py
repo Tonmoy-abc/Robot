@@ -4,6 +4,9 @@ import sys
 from datetime import date, datetime
 
 sys.path.insert(1, os.path.abspath('.'))
+from python.apis.weather.weather import (chance_of_rain, cloud_cover,
+                                         current_humidity, current_temperature,
+                                         current_weather)
 from python.modules.speech_recognition.speech import PSpeak, Recognize, Speak
 
 
@@ -63,6 +66,7 @@ def age(bday,bmoth,byear):
     elif days > 0:
         PSpeak(f"I am {days} days old")
 
+
 def ctime():
     current_time = datetime.today().strftime("%I:%M %p")
     PSpeak(f"Now it is {current_time}") 
@@ -70,4 +74,31 @@ def ctime():
 
 def liveIn():
     PSpeak("I am currently living in Jamalpur,Bangladesh")
+
+
+def cTemp(end="\n"):
+    PSpeak(f"Now it is {current_temperature()}",end=end)
+
+
+def cHumi(end='\n'):
+    PSpeak(current_humidity(),end=end)
+
+
+def cloudC(end="\n"):
+    PSpeak(cloud_cover(),end=end)
+
+
+def cRain(end='\n'):
+    PSpeak(chance_of_rain(),end=end)
+
+
+def weatherForcast():
+    cTemp()
+    cHumi()
+    cloudC()
+    cRain()        
+
+
+def what_is_humidity():
+    PSpeak("Humidity is the concentration of water vapour present in the air. Water vapor, the gaseous state of water, is generally invisible to the human eye. Humidity indicates the likelihood for precipitation, dew, or fog to be present. Humidity depends on the temperature and pressure of the system of interest")
 

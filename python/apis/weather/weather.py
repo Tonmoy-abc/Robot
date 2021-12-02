@@ -16,12 +16,14 @@ def current_humidity():
 
 
 def current_temperature():
-    return f"current temperature is {W.temperature('celsius')['temp']} degree celsius"
+    return f"{W.temperature('celsius')['temp']} degree celsius"
 
 
 def chance_of_rain():
-    return(W.rain)
-
+    if W.rain == {}:
+        return("There is no chance of rain now")
+    else:
+        return("It my rain today")
 
 def cloud_cover():
     return f"cloud cover {W.clouds}%"

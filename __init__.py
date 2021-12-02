@@ -27,6 +27,16 @@ while True:
                 age(bday=30,bmoth=11,byear=2021)
             elif text == what_is_the_time_by_your_watch or text == what_is_the_time_in_your_watch or text == what_is_the_time or text == show_me_the_time or text == time_now or text == current_time or text == what_is_the_current_time:
                 ctime()
+            elif text == what_is_the_current_weather or text == tell_me_about_the_weather or text == current_weather or text == weather or text == todays_weather:
+                weatherForcast()
+            elif text == what_is_the_current_temperature or text == current_temperature or text == temperature or text == temperature_now:
+                cTemp()
+            elif text == what_is_the_current_humidity or text == current_humidity or text == humidity or text == humidity_now:
+                cHumi()
+            elif text == what_is_humidity:
+                what_is_humidity()
+            else:
+                continue
         else:
             print(end='\r')
     else:

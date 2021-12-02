@@ -14,8 +14,8 @@ def Speak(command):
     engine.runAndWait()
 
 
-def PSpeak(command):
-    print(command)
+def PSpeak(command,end="\n"):
+    print(command,end=end)
     Speak(command)
 
 
