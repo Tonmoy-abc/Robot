@@ -8,3 +8,6 @@ __pycache__
 python/tests/test.json
 python/apis/google_search/data.json
 data.json
+python/apis/song/src/*
+python/song/song.py
+python/song/src/Amar-Sonar-Bangla.mp3
