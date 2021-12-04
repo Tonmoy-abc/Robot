@@ -1,7 +1,10 @@
+import os
+
 from pyowm import OWM
 from pyowm.utils import config, timestamps
 
-owm = OWM('04e70ef1d8d7c81b88d848c8d285883e')
+api = os.environ["weatherApi"]
+owm = OWM(api)
 mgr = owm.weather_manager()
 observation = mgr.weather_at_place('Sarishabari')
 W = observation.weather

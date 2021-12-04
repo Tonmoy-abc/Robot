@@ -3,16 +3,16 @@ import os
 
 import requests
 
+API = os.environ["scaleserpApi"]
 cdir = os.path.abspath('python\\apis\\google_search\\')
 # set up the request parameters
 def search(query):
     params = {
-      'api_key': 'BE0F5DB119CE4C19825D5C2DC33527DC',
+      'api_key': API,
       'q': query,
       'include_answer_box': 'true',
       'gl': 'bd',
       'hl': 'en'
-
     }
     # make the http GET request to Scale SERP
     api_result = requests.get('https://api.scaleserp.com/search', params)
