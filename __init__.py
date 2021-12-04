@@ -1,4 +1,3 @@
-from random import randint
 from time import sleep
 
 from python.apis.arduino.smoke import smoked
@@ -8,7 +7,6 @@ from python.modules.speech_recognition.speech import Recognize
 
 #Speak("Hellow I am Agraadut your personal assistant")
 while True:
-    smoke = smoked(randint(1, 2))
     if smoke == False:
         text = Recognize()
         if text != None:
@@ -30,6 +28,4 @@ while True:
         else:
             print(end='\r')
     else:
-        print("smoked")
-        sleep(1)
         continue

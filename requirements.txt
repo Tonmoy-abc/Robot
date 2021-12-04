@@ -1,0 +1,6 @@
+requests
+pywhatkit
+pytube
+pyowm
+pyttsx3
+SpeechRecognition
