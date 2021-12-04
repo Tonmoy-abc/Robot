@@ -8,7 +8,13 @@ from python.apis.weather.weather import (chance_of_rain, cloud_cover,
                                          current_humidity, current_temperature,
                                          current_weather)
 from python.modules.speech_recognition.speech import PSpeak, Recognize, Speak
+from python.song.song import player
 
+
+def How_are_you():
+    PSpeak("I am fine and you?")
+def Hi():
+    PSpeak("Hellow ")
 
 def name(name, cond):
     if cond == "what":
@@ -101,3 +107,10 @@ def weatherForcast():
 
 def what_is_humidity():
     PSpeak("Humidity is the concentration of water vapour present in the air. Water vapor, the gaseous state of water, is generally invisible to the human eye. Humidity indicates the likelihood for precipitation, dew, or fog to be present. Humidity depends on the temperature and pressure of the system of interest")
+
+## PLAY Function
+
+def Play(name):
+    print("Playing "+ name, end="\n")
+    player(name)
+    print("          ", end="\r")

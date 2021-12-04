@@ -1,6 +1,9 @@
 """
 General conditions (*_*)
 """
+# Greetings
+hi = "hi"
+how_are_you = "how are you"
 # What
 #text = None
 what_is_your_name = "what is your name"
@@ -62,3 +65,13 @@ what_is_the_current_cloud_cover = "what is the current cloud_cover"
 current_cloud_cover = "current cloud cover"
 cloud_cover_now = "cloud cover now"
 cloud_cover = "cloud cover"
+
+##Play
+play = "play"
+play_the_national_song_of_bangladesh = "play the national song of bangladesh"
+play_the_national_anthem_of_bangladesh = "play the national song of bangladesh"
+play_amar_sonar_bangla = "play amar_sonar_bangla"
+sing = "sing"
+sing_the_national_song_of_bangladesh = "sing the national song of bangladesh"
+sing_the_national_anthem_of_bangladesh = "sing the national song of bangladesh"
+sing_amar_sonar_bangla = "sing amar_sonar_bangla"
