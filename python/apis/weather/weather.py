@@ -1,8 +1,5 @@
 import os
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 from pyowm import OWM
 from pyowm.utils import config, timestamps
 
