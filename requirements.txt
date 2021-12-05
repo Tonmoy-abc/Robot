@@ -4,4 +4,4 @@ pytube
 pyowm
 pyttsx3
 SpeechRecognition
-googletrans
+googletrans==3.1.0a0
