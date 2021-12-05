@@ -4,3 +4,4 @@ pytube
 pyowm
 pyttsx3
 SpeechRecognition
+googletrans
