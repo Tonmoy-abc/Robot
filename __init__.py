@@ -1,5 +1,7 @@
 from time import sleep
 
+from pywhatkit.misc import search
+
 from python.apis.arduino.smoke import smoked
 from python.apis.configs.conditions import *
 from python.apis.configs.functions import *
@@ -65,6 +67,12 @@ while True:
                 else:
                     PSpeak("What to sing? You don't say anything after sing")
                 print("          ", end="\r")
+            elif text.split(" ")[0] == "search":
+                text = text.replace("search","").strip()
+                if text != "":
+                    search(text)
+                else:
+                    PSpeak("What to search? You didn't say anything afther search")
             else:
                 continue
         else:
