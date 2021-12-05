@@ -1,7 +1,5 @@
 from time import sleep
 
-from pywhatkit.misc import search
-
 from python.apis.arduino.smoke import smoked
 from python.apis.configs.conditions import *
 from python.apis.configs.functions import *

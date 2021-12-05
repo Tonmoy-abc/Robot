@@ -4,6 +4,7 @@ import sys
 from datetime import date, datetime
 
 sys.path.insert(1, os.path.abspath('.'))
+from python.apis.google_search.search import search_description
 from python.apis.weather.weather import (chance_of_rain, cloud_cover,
                                          current_humidity, current_temperature,
                                          current_weather)
@@ -114,3 +115,6 @@ def Play(name):
     print("Playing "+ name, end="\n")
     player(name)
     print("          ", end="\r")
+
+def google_Search(keyword):
+    search_description(keyword)
