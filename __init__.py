@@ -34,7 +34,8 @@ while True:
                 country()
             elif text == how_old_are_you:
                 age(bday=30,bmoth=11,byear=2021)
-            elif text == what_is_the_time_by_your_watch or text == what_is_the_time_in_your_watch or text == what_is_the_time or text == show_me_the_time or text == time_now or text == current_time or text == what_is_the_current_time or text==tell_me_the_time:
+            elif (text == what_is_the_time_by_your_watch or text == what_is_the_time_in_your_watch or text == what_is_the_time or 
+                  text == show_me_the_time or text == time_now or text == current_time or text == what_is_the_current_time or text==tell_me_the_time):
                 ctime()
             elif text == what_is_the_current_weather or text == tell_me_about_the_weather or text == current_weather or text == weather or text == todays_weather:
                 weatherForcast()
