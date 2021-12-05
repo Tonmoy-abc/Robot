@@ -1,4 +1,3 @@
-from posixpath import split
 from time import sleep
 
 from python.apis.arduino.smoke import smoked
