@@ -68,7 +68,7 @@ while True:
             elif text.split(" ")[0] == "search":
                 text = text.replace("search","").strip()
                 if text != "":
-                    search(text)
+                    google_Search(text)
                 else:
                     PSpeak("What to search? You didn't say anything afther search")
             else:
