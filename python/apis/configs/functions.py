@@ -117,4 +117,4 @@ def Play(name):
     print("          ", end="\r")
 
 def google_Search(keyword):
-    search_description(keyword)
+    return search_description(keyword)

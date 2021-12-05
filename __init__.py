@@ -45,6 +45,7 @@ while True:
                 cHumi()
             elif text == what_is_humidity:
                 what_is_humidity()
+            # Start play block
             elif text.split(" ")[0] == play:
                 song = text.replace("play", "").strip()
                 if song != "":
@@ -55,6 +56,7 @@ while True:
                 else:
                     PSpeak("What to play? You don't say anything after play")
                 print("          ", end="\r")
+            #Start sing block
             elif text.split(" ")[0] == sing:
                 song = text.replace("sing", "").strip()
                 if song != "":
@@ -65,12 +67,18 @@ while True:
                 else:
                     PSpeak("What to sing? You don't say anything after sing")
                 print("          ", end="\r")
+            # Start search block
             elif text.split(" ")[0] == "search":
                 text = text.replace("search","").strip()
                 if text != "":
-                    google_Search(text)
+                    x = google_Search(text)
+                    if x != None:
+                        PSpeak(x)
+                    else:
+                        PSpeak("Sorry could not find any result. Please try again")
                 else:
                     PSpeak("What to search? You didn't say anything afther search")
+            # End search block
             else:
                 continue
         else:
