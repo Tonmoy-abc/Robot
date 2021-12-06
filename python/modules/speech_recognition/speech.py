@@ -7,16 +7,26 @@ import speech_recognition as sr
 r = sr.Recognizer()
 
 
-def Speak(command):
+def Speak(command, speed='stanard'):
     print("speaking", end="\r", flush="true")
-    engine = pyttsx3.init()
+    engine = pyttsx3.init('sapi5')
+    voices = engine.getProperty('voices')
+    engine.setProperty('voice', voices[1].id)
+    if speed.lower() == "low":
+        engine.setProperty('rate', 110)
+    elif speed.lower() == "standard":
+        engine.setProperty('rate', 150)
+    elif speed.lower() == 'high':
+        engine.setProperty('rate', 200)
+    else:
+        raise ValueError("Un known value {}".format(speed))
     engine.say(command)
     engine.runAndWait()
 
 
-def PSpeak(command,end="\n"):
+def PSpeak(command, speed="standard", end="\n"):
     print(command,end=end)
-    Speak(command)
+    Speak(command, speed=speed)
 
 
 def Recognize():
@@ -64,3 +74,4 @@ def RawRecognize():
         exit()
     except ImportError:
         print("You have to install the requirements\nType the following command=>\npip install -r requirements.txt")
+
