@@ -1,9 +1,12 @@
-from time import sleep
+from os import error
+from time import sleep, time
+from urllib.request import urlcleanup
 
 from python.apis.arduino.smoke import smoked
 from python.apis.configs.conditions import *
 from python.apis.configs.functions import *
 from python.modules.speech_recognition.speech import PSpeak, Recognize
+from python.song.song import Play, stop, timer
 
 #Speak("Hellow I am Agraadut your personal assistant")
 while True:
@@ -50,9 +53,26 @@ while True:
                 song = text.replace("play", "").strip()
                 if song != "":
                     if text == play_amar_sonar_bangla or text == play_the_national_anthem_of_bangladesh or text == play_the_national_song_of_bangladesh:
-                        Play("https://www.youtube.com/watch?v=zVjbVPFeo2o")
+                        url = Play("https://www.youtube.com/watch?v=zVjbVPFeo2o")
+                        with open("./python/song/savedata.txt", 'w') as f:
+                            f.write(url)
+                            f.close()
+                        timer(url=url)
+                    elif song == "previous":
+                        try:
+                            with open("./python/song/savedata.txt", 'r') as f:
+                                url = f.read()
+                                f.close()
+                        except:
+                            continue
+                        url = Play(url)
+                        timer(url=url)
                     else:
-                        Play(song)
+                        url = Play(song)
+                        with open("./python/song/savedata.txt", 'w') as f:
+                            f.write(url)
+                            f.close()
+                        timer(url)
                 else:
                     PSpeak("What to play? You don't say anything after play")
                 print("          ", end="\r")
@@ -61,9 +81,26 @@ while True:
                 song = text.replace("sing", "").strip()
                 if song != "":
                     if text == sing_amar_sonar_bangla or text == sing_the_national_anthem_of_bangladesh or text == sing_the_national_song_of_bangladesh:
-                        Play("https://www.youtube.com/watch?v=zVjbVPFeo2o")
+                        url = Play("https://www.youtube.com/watch?v=zVjbVPFeo2o")
+                        with open("./python/song/savedata.txt", 'w') as f:
+                            f.write(url)
+                            f.close()
+                        timer(url)
+                    elif song == "previous":
+                        try:
+                            with open("./python/song/savedata.txt", 'r') as f:
+                                url = f.read()
+                                f.close()
+                        except:
+                            continue
+                        url = Play(url)
+                        timer(url)
                     else:
-                        Play(song)
+                        url = Play(song)
+                        with open("./python/song/savedata.txt", 'w') as f:
+                            f.write(url)
+                            f.close()
+                        timer(url)
                 else:
                     PSpeak("What to sing? You don't say anything after sing")
                 print("          ", end="\r")
@@ -78,7 +115,12 @@ while True:
                         PSpeak("Sorry could not find any result. Please try again")
                 else:
                     PSpeak("What to search? You didn't say anything afther search")
-            # End search block
+            # Start calculation Block
+            elif text.split(" ")[0] == "calculate":
+                try:
+                    PSpeak(calculate(text))
+                except ValueError:
+                    PSpeak("Unknown value give intiger values")
             else:
                 continue
         else:
