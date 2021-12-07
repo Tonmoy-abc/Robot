@@ -1,4 +1,3 @@
-import math
 import os
 import sys
 from datetime import date, datetime
@@ -6,15 +5,15 @@ from datetime import date, datetime
 sys.path.insert(1, os.path.abspath('.'))
 from python.apis.google_search.search import search_description
 from python.apis.weather.weather import (chance_of_rain, cloud_cover,
-                                         current_humidity, current_temperature,
-                                         current_weather)
-from python.modules.speech_recognition.speech import PSpeak, Recognize, Speak
+                                         current_humidity, current_temperature)
+from python.modules.calculation.calculate import add, div, mul, sub
+from python.modules.speech_recognition.speech import PSpeak
 
 
 def How_are_you():
     PSpeak("I am fine and you?")
 
-    
+
 def Hi():
     PSpeak("Hellow ")
 
@@ -114,3 +113,33 @@ def What_is_humidity():
 
 def google_Search(keyword):
     return search_description(keyword)
+
+
+## Calculation
+def calculate(value):
+    value = value.replace('calculate', '').strip()
+    if '+' in value:
+        value = value.split('+')
+        x = int(value[0])
+        y = int(value[1])
+        return add(x,y)
+    elif '-' in value:
+        value = value.split('-')
+        x = int(value[0])
+        y = int(value[1])
+        return sub(x,y)
+    elif '*' in value:
+        value = value.split('*')
+        x = int(value[0])
+        y = int(value[1])
+        return mul(x,y)
+    elif 'into' in value:
+        value = value.split('into')
+        x = int(value[0])
+        y = int(value[1])
+        return mul(x,y)
+    elif '/' in value:
+        value = value.split('/')
+        x = int(value[0])
+        y = int(value[1])
+        return div(x,y)
