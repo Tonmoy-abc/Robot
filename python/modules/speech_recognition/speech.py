@@ -6,7 +6,7 @@ r = sr.Recognizer()
 
 
 def Speak(command, speed='stanard'):
-    print("speaking", end="\r", flush="true")
+    print("speaking                     ", end="\r", flush="true")
     engine = pyttsx3.init('sapi5')
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[1].id)
