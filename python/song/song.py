@@ -11,7 +11,6 @@ sys.path.insert(1, os.path.abspath('.'))
 from python.modules.speech_recognition.speech import RawRecognize
 from python.song.youtubeData import length
 
-
 def stop():
   try:
     cmd = subprocess.run(["taskkill", "/im", "chrome.exe"], capture_output=True).stdout.decode()
@@ -23,7 +22,6 @@ def stop():
       return "Already Stopted"
   except KeyboardInterrupt:
     exit()
-
 
 def play(name):
   try:
@@ -37,7 +35,6 @@ def player(name):
         while True:
             command = RawRecognize()
             return command
-    def timer(name, commad=None):
         url = play(name)
         leng = length(url)
         hr_min_sec = str(datetime.timedelta(seconds=leng))
@@ -90,4 +87,3 @@ def player(name):
                 print("          ", end="\r")
                 break
         stop()
-    timer(name)
